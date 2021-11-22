@@ -155,7 +155,13 @@
 				"type": "function"
 			},
 			{
-				"inputs": [],
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					}
+				],
 				"name": "findOwnTokens",
 				"outputs": [
 					{
@@ -514,7 +520,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"src/contracts/Color.sol": "Color"
+			"src/contracts/Idea.sol": "Color"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -624,12 +630,12 @@
 				"dweb:/ipfs/QmcUA7ZBgKA2MnfMNhba9xcTHGUqW29aXRSFCxzgS1PgTn"
 			]
 		},
-		"src/contracts/Color.sol": {
-			"keccak256": "0xf68d5405d2ab2281b96027cbdade1520188a50f6f25df7ad919dd5e8a59055e9",
+		"src/contracts/Idea.sol": {
+			"keccak256": "0x13af348ed99c6290baf9948ad959728bae835d0973446e11c8231f581fb3f3fa",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://f6d5de752ff63ef1c8fbd53b8bd22f7fc6869b5d60ee5372f054c37e226d2a4d",
-				"dweb:/ipfs/QmaZF8QSLmz4AmGpocymaY4MtCpt1CdVngKVsxo87Rz5we"
+				"bzz-raw://84b40638e60b624d6ffcae170d9d61cb3bd4f3776913437654eb4da1720a00a2",
+				"dweb:/ipfs/QmXSfDCFWYxMt9NL39E64brX9qLLq6pkLdCq4qp4VBQw6A"
 			]
 		}
 	},

@@ -22,5 +22,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-/src/abis
-/src/contracts/artifacts
+src/abis
+src/contracts/artifacts
+src/abis/

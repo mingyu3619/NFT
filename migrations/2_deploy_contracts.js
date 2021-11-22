@@ -1,5 +1,5 @@
-const Color = artifacts.require("Color");
+const Idea = artifacts.require("Idea");
 
 module.exports = function(deployer) {
-  deployer.deploy(Color);
+  deployer.deploy(Idea);
 };
