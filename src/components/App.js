@@ -1,7 +1,5 @@
 import React, { useEffect, useState, useCallback } from 'react'
 import './App.css';
-import Web3 from 'web3'
-import Color from '../abis/Color.json'
 import { BrowserRouter, Route, Link, Routes } from "react-router-dom";
 import Board from './board';
 import Test from "../components/test";

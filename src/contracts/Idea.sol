@@ -8,7 +8,7 @@ import "hardhat/console.sol";
 contract Idea is ERC721, ERC721Enumerable{
   
 
-  event Mint(string  title, string  category, string  paragraph,uint256 timestamp); 
+  event Mint(string ipfs_hash ,string  title, string  category, string  paragraph,uint256 timestamp); 
   event NftBought(address _seller, address _buyer, uint256 _price);
   
     mapping (uint256 => Idea) private IdeaList;
@@ -17,6 +17,7 @@ contract Idea is ERC721, ERC721Enumerable{
 
   struct Idea{
       uint256 tokenID;  //토큰아이디
+      string ipfs_hash;
       string category;  //
       string title;
       string paragraph;
@@ -35,20 +36,21 @@ contract Idea is ERC721, ERC721Enumerable{
   }
 
   //mint token
-  function mint(string memory title, string memory category, string memory paragraph) public{
+  function mint(string memory category ,string memory title, string memory paragraph ,string memory ipfs_hash ) public{
     uint256 tokenID = totalSupply() +1;  
     _mint(msg.sender,tokenID);
     
     Idea memory newIdea = Idea({
         tokenID : tokenID,
         category:category,
+        ipfs_hash:ipfs_hash,
         title: title,
         paragraph:paragraph,
         timestamp : block.timestamp
     });
      
     IdeaList[tokenID]=newIdea;
-    emit  Mint(title,category,paragraph,block.timestamp); 
+    emit  Mint(ipfs_hash,title,category,paragraph,block.timestamp); 
     
     console.log("tokenID:",tokenID,"category:",category);
     console.log("title:",title,"timestamp:",newIdea.timestamp);
@@ -56,7 +58,8 @@ contract Idea is ERC721, ERC721Enumerable{
   
   function burn(uint256 tokenID) public{
     
-    // delete ideas[tokenID];    
+    delete IdeaList[tokenID];    
+    delete tokenIdToPrice[tokenID];
     _burn(tokenID);
   }
   
@@ -110,11 +113,12 @@ contract Idea is ERC721, ERC721Enumerable{
   }
   
   //retrun Idea  
-  function getIdea(uint tokenID)public returns(uint256, string memory, string memory, string memory, uint256){
+  function getIdea(uint tokenID)public returns(uint256, string memory, string memory, string memory, string memory, uint256){
       console.log("IdeaList[tokenID].tokenID:",IdeaList[tokenID].tokenID,"IdeaList[tokenID].title:",IdeaList[tokenID].title);
       console.log("IdeaList[tokenID].category:",IdeaList[tokenID].category,"IdeaList[tokenID].paragraph:",IdeaList[tokenID].paragraph);
       return(
           IdeaList[tokenID].tokenID,
+          IdeaList[tokenID].ipfs_hash,
           IdeaList[tokenID].title,
           IdeaList[tokenID].category,
           IdeaList[tokenID].paragraph,
