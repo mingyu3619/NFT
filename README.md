@@ -12,7 +12,38 @@
 
 ![image](https://user-images.githubusercontent.com/86222639/149949157-fb82db2a-f6d9-446d-b2f4-75551a2cd10f.png)
 
+## 설치
++ 프로젝트 설치
+```
+git clone https://github.com/mingyu3619/NFT.git
+npm install
+```
 
++ 메타마스크 설치
+  + https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn?hl=ko
+
+
+## 실행
+
++ remix를 통해 코드 수정 및 Web3 provider 실행
+  + https://remix.ethereum.org/ 
+
++ metamask와 remix web3 provider 연동
+
++ Deployed Contracts 의 배포된 컨트랙트 주소 복사
+
+![image](https://user-images.githubusercontent.com/86222639/149972408-225dd0d5-40e1-4531-8446-4754bc6f35b8.png)
+
++ contract 주소 수정
+  + src > components > load_block.js 내의 contract 주소 수정
+  
+``
+const contract = new web3.eth.Contract(ContractABI, "your contract address")   <-- fix contract
+`` 
++ react 실행 
+``
+npm run start
+``
 ## Smart contract
 
 + Openzeppelin ERC721 
@@ -41,4 +72,12 @@
   - 토큰 정보 확인
   - 토큰 구매
 ![image](https://user-images.githubusercontent.com/86222639/149952646-7acbb0a6-312d-4271-bd15-aa397fdd2106.png)
+
+
+##tech stack
+
++ remix
++ solidity
++ react
++ web3
 
