@@ -74,7 +74,7 @@ npm run start
 ![image](https://user-images.githubusercontent.com/86222639/149952646-7acbb0a6-312d-4271-bd15-aa397fdd2106.png)
 
 
-##tech stack
+## tech stack
 
 + remix
 + solidity
